@@ -28,7 +28,7 @@ func executeCommand(currentTime time.Time) {
 }
 
 func wrapOutput(psOutput string, timeOfExecution time.Time) string {
-	currentTime := timeOfExecution.String()
+	currentTime := timeOfExecution.UTC().String()
 
 	firstLine := fmt.Sprintf("********%v*******\n", currentTime)
 	buffer := bytes.NewBufferString(firstLine)
